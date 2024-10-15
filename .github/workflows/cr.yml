@@ -1,8 +1,8 @@
 name: review_automation
 on:
-  issue_comment:
+  pull_request:
     types:
-      - created
+      - labeled
 jobs:
   add-comment:
     if: github.event.comment.body == 'auto_review'
