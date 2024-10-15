@@ -18,7 +18,8 @@ jobs:
           NUMBER: ${{ github.event.pull_request.number }}
           CODE_BODY: |
             ## Here is a systematic evaluation of the provided code from a TA perspective
-            
+            ---
+
             ### 1. **Logical Flaws**:
             - **No major logical flaws** were identified in the provided code. The method `initialize()` serves its purpose of initializing the application context and measuring the time taken for the operation.
             
@@ -70,6 +71,7 @@ jobs:
               ```java
               // Additional method for performing the main initialization logic
               ```
+            ---
             
             ### **Summary of Issues and Risk Assessment**:
             1. **Exception Handling** (Medium risk): Lack of exception handling in `performInitialization()` could lead to unexpected crashes. Adding proper `try-catch` blocks would reduce this risk.
@@ -87,7 +89,8 @@ jobs:
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.pull_request.number }}
           TEST_BODY: |
-            Here is a systematic evaluation of the provided code from a testing perspective:
+            ## Here is a systematic evaluation of the provided code from a testing perspective:
+            ---
 
             ### 1. **Test Coverage**:
             - **Testability of Logic**: The code’s main logic is contained in the `initialize()` and `performInitialization()` methods, which are simple enough to test. However, the real effectiveness of testing depends on the complexity of the `performInitialization()` method (currently not provided). 
