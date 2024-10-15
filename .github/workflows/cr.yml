@@ -5,7 +5,7 @@ on:
       - labeled
 jobs:
   add-comment:
-    if: github.event.comment.body == 'auto_review'
+    if: github.event.label.name == 'auto_review'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
