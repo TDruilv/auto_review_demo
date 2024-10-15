@@ -16,7 +16,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.pull_request.number }}
-          BODY: >
+          BODY: |
             ## Here is a systematic evaluation of the provided code from a TA perspective:
 
             ### 1. **Logical Flaws**:
@@ -79,13 +79,13 @@ jobs:
             3. **Commenting** (Low risk): The code is clear, but slightly more descriptive comments could enhance future maintainability.
             
             Overall, the code is well-structured, readable, and functional, but adding exception handling would increase its robustness.
-      - name: Add comment
+      - name: Add t comment
         run: gh pr comment "$NUMBER" --body "$BODY"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.pull_request.number }}
-          BODY: >
+          BODY: |
             Here is a systematic evaluation of the provided code from a testing perspective:
 
             ### 1. **Test Coverage**:
