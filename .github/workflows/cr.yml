@@ -5,7 +5,7 @@ on:
       - created
 jobs:
   add-comment:
-    if: github.event.comment.body == 'auto_review' && github.event.issue.pull_request != null
+    if: github.event.comment.body == 'auto_review'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
