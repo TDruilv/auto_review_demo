@@ -5,12 +5,12 @@ on:
       - labeled
 jobs:
   add-comment:
-    if: github.event.label.name == 'auto_review'
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
     steps:
       - name: Add TA Comment
+        if: github.event.label.name == 'auto_review'
         run: gh pr comment "$NUMBER" --body "$CODE_BODY"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -83,6 +83,7 @@ jobs:
             Overall, the code is well-structured, readable, and functional, but adding exception handling would increase its robustness.
             
       - name: Add testing review comment
+        if: github.event.label.name == 'auto_review_text_expert'
         run: gh pr comment "$NUMBER" --body "$TEST_BODY"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
