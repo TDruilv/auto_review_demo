@@ -83,7 +83,7 @@ jobs:
             Overall, the code is well-structured, readable, and functional, but adding exception handling would increase its robustness.
             
       - name: Add testing review comment
-        if: github.event.label.name == 'auto_review_text_expert'
+        if: github.event.label.name == 'auto_review_test_expert'
         run: gh pr comment "$NUMBER" --body "$TEST_BODY"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
